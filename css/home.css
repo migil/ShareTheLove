@@ -49,13 +49,14 @@ label{
 button{
     padding: 4px;
     font-size: 14pt;
-    background-color: #E98074;
+    background-color: #E85A4F;
     border-radius: 12px;
     color: #EAE7DC;
     cursor: pointer;
 }
 button:hover{
     background-color: #EAE7DC;
+    color: #8E8D8A;
 }
 input[type=text]{
     padding: 4px;
