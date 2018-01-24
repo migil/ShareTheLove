@@ -1,5 +1,6 @@
 body{
     background-color: #EAE7DC;
+    font-family: arial;
 }
 div.header{
     z-index: -1;
@@ -12,6 +13,7 @@ div.header{
     font-size: 8vh;
     background-color: #D8C3A5;
     height: 10vh;
+    font-family: 'Times New Roman';
 }
 img{
     position:absolute;
