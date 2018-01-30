@@ -1,0 +1,137 @@
+body{
+    background-color: #EAE7DC;
+    font-family: arial;
+}
+
+div.header{
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    color: #E85A4F;
+    text-align: center;
+    font-size: 8vh;
+    background-color: #D8C3A5;
+    height: 10vh;
+    font-family: 'Times New Roman';
+}
+
+
+
+div.profileImageContainer{
+    position: relative;
+}
+div.dropDown{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: inline-block;
+}
+.dropDownContent {
+    left:auto;
+    right:4px;
+    margin-right:-10px;
+
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+.show{
+    display:block;
+}
+.dropDownContent a {
+    color: black;
+    padding: 4px 6px;
+    text-decoration: none;
+    display: block;
+}
+div.columnContainer{
+    padding-top: 12vh;
+    padding-left: 15%;
+}
+div.columnContainer:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.columnFiller{
+    float: left;
+    width: 15%;
+}
+div.columnUserInfo{
+    float: left;
+    top: 12vh;
+    left: 10%;
+    width: 35%;
+    padding: 2.5%;
+    /* background-color: #E85A4F; */
+}
+div.columnComments{
+    float: left;
+    padding: 2.5%;
+    width: 35%;
+    background-color: #D8C3A5; 
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+p.contactInfo{
+    color: #8E8D8A;
+    font-family: Arial;
+    font-size: 16pt;
+}
+p.comments{
+    color: #8E8D8A;
+    font-family: Arial;
+    font-size: 14pt;
+}
+
+
+
+textarea{
+    border-radius: 12px;
+    background-color: #EAE7DC;
+}
+button{
+    padding: 4px;
+    font-size: 14pt;
+    background-color: #E85A4F;
+    border-radius: 12px;
+    color: #EAE7DC;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #EAE7DC;
+    color: #8E8D8A;
+}
+#profileImage{/*
+    position: absolute;
+    top: 0px;
+    right: 0px; */
+    height: 8vh;
+    width: 8vh; 
+    cursor: pointer;
+}
+#homeIcon{
+    position: absolute;
+    top: 1vh;
+    left: 1vh;
+    height: 6vh;
+    width: 6vh;
+    cursor: pointer;
+}
+#otherProfile{
+    display: block;
+    margin: auto;
+    width:40%;
+}
+
+
+
+
+
