@@ -17,10 +17,10 @@ div.columnContainer:after {
 }
 
 div.groupColumn{
-    height: -webkit-fill-available;
+    height: fit-content;
     float: left;
     top: 12vh;
-    width: 60%;
+    width: 96%;
     padding: 2.5%;
     padding-top: 0px;
     border: 2px solid #E85A4F;
@@ -28,12 +28,12 @@ div.groupColumn{
 }
 
 div.activityColumn{
-    height: -webkit-fill-available;
+    height: fit-content;
     float: left;
-    margin-left: 2.5%;
-    padding: 2.5%;
+    margin-top: 2%;
+    padding-left: 2.5%;
     padding-top: 0px;
-    width: 26%;
+    width: 96%;
     border: 2px solid #E85A4F;
     border-radius: 8px;
 }
@@ -51,8 +51,9 @@ div.columnHeaderRight{
 }
 
 p.columnTitle{
+    margin-top: 0px;
+    margin-bottom: 2%;
     text-align: center;
-    margin: 0px !important;
     font-size: 5vh;
     font-family: 'Times New Roman';
     color: #E85A4F;
@@ -86,8 +87,17 @@ p.columnTitle{
     background-color: #E85A4F;
 }
 
-
 p.activityElem{
     font-size: 2.5vh;
     font-family: 'Times New Roman';
 }
+
+@media only screen and (max-width: 500px) {
+    div.columnHeaderLeft {width: 100%;}
+    div.columnHeaderRight {
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 3%;
+    }
+}
+
