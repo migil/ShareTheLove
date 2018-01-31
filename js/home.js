@@ -1,21 +1,23 @@
-<!doctype html>
+function homePress(){
+    window.location.href = "home.html";
+}
 
-<html lang="en">
-<head>
-  <meta charset="utf-8">
+function profilePress() {
+    document.getElementById("profileDropDown").classList.toggle("show");
+    //document.getElementById("test").innerHTML = "New text!";
+} 
 
-  <title>ShareTheLove</title>
-  <!-- <link rel="stylesheet" href="css/styles.css"> -->
 
-  <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-  <![endif]-->
-</head>
-
-<body>
-	<p>HELLO BROS</p>
-	<!--
-  <script src="js/scripts.js"></script>
-  -->
-</body>
-</html>
+window.onclick = function(event) {
+    if (!event.target.matches('.profileImageClass')) {
+  
+      var dropdowns = document.getElementsByClassName("dropDownContent");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }

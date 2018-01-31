@@ -1,0 +1,93 @@
+body{
+    background-color: #EAE7DC;
+    font-family: arial;
+}
+
+
+
+div.columnContainer{
+    padding-top: 12vh;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+div.columnContainer:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+div.groupColumn{
+    height: -webkit-fill-available;
+    float: left;
+    top: 12vh;
+    width: 60%;
+    padding: 2.5%;
+    padding-top: 0px;
+    border: 2px solid #E85A4F;
+    border-radius: 8px;
+}
+
+div.activityColumn{
+    height: -webkit-fill-available;
+    float: left;
+    margin-left: 2.5%;
+    padding: 2.5%;
+    padding-top: 0px;
+    width: 26%;
+    border: 2px solid #E85A4F;
+    border-radius: 8px;
+}
+
+div.columnHeaderLeft{
+    float: left;
+    width: 65%;
+    margin-bottom: 1%;
+}
+
+div.columnHeaderRight{
+    float: left;
+    margin-left: 3%;
+    width: 32%;
+}
+
+p.columnTitle{
+    text-align: center;
+    margin: 0px !important;
+    font-size: 5vh;
+    font-family: 'Times New Roman';
+    color: #E85A4F;
+}
+
+.groupColumn a.button {
+    margin-top: 1%;
+    background-color: #8E8D8A; /* Green */
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 5vh;
+    cursor: pointer;
+    width: -webkit-fill-available;
+    display: block;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+
+.groupColumn a.button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+}
+
+.groupColumn a.button:hover {
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    background-color: #E85A4F;
+}
+
+
+p.activityElem{
+    font-size: 2.5vh;
+    font-family: 'Times New Roman';
+}
