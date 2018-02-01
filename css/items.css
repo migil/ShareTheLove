@@ -1,0 +1,151 @@
+div.columnContainer{
+    padding-top: 12vh;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+div.columnContainer:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+div.groupColumn{
+    height: fit-content;
+    float: left;
+    top: 12vh;
+    width: 96%;
+    padding: 2.5%;
+    padding-top: 0px;
+    border: 2px solid #E85A4F;
+    border-radius: 8px;
+}
+
+div.activityColumn{
+    height: fit-content;
+    float: left;
+    margin-top: 2%;
+    padding-left: 2.5%;
+    padding-top: 0px;
+    width: 96%;
+    border: 2px solid #E85A4F;
+    border-radius: 8px;
+}
+
+div.columnHeaderLeft{
+    float: left;
+    width: 65%;
+    margin-bottom: 1%;
+}
+
+div.columnHeaderRight{
+    float: left;
+    margin-left: 3%;
+    width: 32%;
+}
+
+p.columnTitle{
+    float: left;
+    width: 70%;
+    margin-top: 0px;
+    margin-bottom: 2%;
+    text-align: center;
+    font-size: 5vh;
+    font-family: 'Times New Roman';
+    color: #E85A4F;
+}
+
+@media only screen and (max-width: 500px) {
+    div.columnHeaderLeft {width: 100%;}
+    div.columnHeaderRight {
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 3%;
+    }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 13vh;
+  height: 6vh;
+  margin-top: 1%;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "Click to Join";
+  height: 4vh;
+  width: 13vh;
+  left: 2vh;
+  font-size: 2vh;
+  top: 5%;
+  bottom: 2vh;
+  -webkit-transition: .4s;
+  color: darkred;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  font-size: 2vh;
+  content: "Joined"
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+div.memberElem{
+  font-size: 2.5vh;
+  font-family: 'Times New Roman';
+}
+
+div.itemsColumn{
+    height: fit-content;
+    float: left;
+    top: 12vh;
+    width: 96%;
+    padding: 2.5%;
+    padding-top: 0px;
+    border: 2px solid #E85A4F;
+    border-radius: 8px;
+}
+
+
+div.memberColumn{
+    height: fit-content;
+    float: left;
+    margin-top: 2%;
+    padding-left: 2.5%;
+    padding-top: 0px;
+    width: 96%;
+    border: 2px solid #E85A4F;
+    border-radius: 8px;
+}
+
