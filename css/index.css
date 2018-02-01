@@ -61,4 +61,5 @@ button:hover{
 input[type=text]{
     padding: 4px;
     width: 75%;
+    border-radius: 12px;
 }

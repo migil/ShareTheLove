@@ -1,15 +1,20 @@
 
 function profilePress() {
-    document.getElementById("profileDropDown").classList.toggle("show");
+    //document.getElementById("profileDropDown").classList.toggle("show");
     //document.getElementById("test").innerHTML = "New text!";
+    window.location.href = "myProfile.html";
 } 
 
+function logoutPress(){
+  window.location.href = "index.html";
+}
 function homePress(){
     window.location.href = "home.html";
 }
 
 
 
+/*
 window.onclick = function(event) {
     if (!event.target.matches('.profileImageClass')) {
   
@@ -23,4 +28,4 @@ window.onclick = function(event) {
       }
     }
   }
-  
+  */
