@@ -1,42 +1,18 @@
 div.profileImageContainer{
     position: relative;
 }
-div.dropDown{
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    display: inline-block;
-}
-.dropDownContent {
-    left:auto;
-    right:4px;
-    margin-right:-10px;
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 2;
-}
+
 #headShare{
     cursor: pointer;
-    font-size: 6vh;
-    margin-top: 1vh;
 }
 
 .show{
     display:block;
 }
-.dropDownContent a {
-    color: black;
-    padding: 4px 6px;
-    text-decoration: none;
-    display: block;
-}
+
 div.columnContainer{
     padding-top: 12vh;
-    padding-left: 15%;
+    /*margin: 0 auto;*/
 }
 div.columnContainer:after {
     content: "";
@@ -48,7 +24,6 @@ div.columnContainer:after {
     width: 15%;
 }
 div.columnUserInfo{
-    float: left;
     top: 12vh;
     left: 10%;
     width: 35%;
@@ -56,16 +31,8 @@ div.columnUserInfo{
     /* background-color: #E85A4F; */
     border: 2px solid #D8C3A5;
     border-radius: 8px;
-}
-div.columnComments{
-    float: left;
-    padding: 2.5%;
-    width: 35%;
-    background-color: #D8C3A5; 
-    overflow: scroll;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    border-radius: 12px;
+
+    margin: 0 auto;
 }
 p.contactInfo{
     color: #8E8D8A;
@@ -101,7 +68,7 @@ button:hover{
     top: 0px;
     right: 0px; */
     height: 8vh;
-    width: 8vh; 
+    width: 8vh;
     cursor: pointer;
 }
 #homeIcon{

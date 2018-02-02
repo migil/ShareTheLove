@@ -3,14 +3,13 @@ function homePress(){
 }
 
 function profilePress() {
-    document.getElementById("profileDropDown").classList.toggle("show");
-    //document.getElementById("test").innerHTML = "New text!";
-} 
+    window.location.href = "myProfile.html";
+}
 
 
 window.onclick = function(event) {
     if (!event.target.matches('.profileImageClass')) {
-  
+
       var dropdowns = document.getElementsByClassName("dropDownContent");
       var i;
       for (i = 0; i < dropdowns.length; i++) {

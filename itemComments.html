@@ -19,14 +19,14 @@
 
 <body>
 	<div class="header">
-    <h id="headShare" onclick="homePress()">Share the Love</h>
+    <h1 id="headShare" onclick="homePress()">Share the Love</h1>
   </div>
   <div class="profileImageContainer">
-    <img src ="pix/logout_icon.png" id="homeIcon" onclick="logoutPress()">
+    <img src ="pix/logout_icon.png" id="homeIcon" onclick="logoutPress()" alt="random.jpg">
     <div class="dropDown">
 
       <img src="pix/defaultProfile.jpg" id="profileImage" class="profileImageClass" 
-        onclick="profilePress()">
+        onclick="profilePress()" alt="random.jpg">
       <!--
       <div id="profileDropDown" class="dropDownContent">
           <a href="myProfile.html">My Profile Settings</a>
@@ -38,7 +38,7 @@
 
   <div class="columnContainer">
     <div class="columnUserInfo">
-      <img src="pix/otherProfile.jpg" id="otherProfile">
+      <img src="pix/otherProfile.jpg" id="otherProfile" alt="random.jpg">
       <br/>
       <p class="contactInfo">Item: Tape</p>
       <p class="contactInfo">Owner: Little Bobby Joe</p>
@@ -64,12 +64,12 @@
 
 	<!--
   <script src="js/scripts.js"></script>
-  
+
   <script src="js/itemComments.js"></script> -->
 
   <!--
   <script>
-      /* When the user clicks on the button, 
+      /* When the user clicks on the button,
       toggle between hiding and showing the dropdown content */
       function profilePress() {
           document.getElementById("profileDropDown").classList.toggle("show");

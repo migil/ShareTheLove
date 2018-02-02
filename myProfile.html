@@ -4,6 +4,11 @@
 <head>
   <meta charset="utf-8">
 
+  <link rel="stylesheet" href="css/headerLayout.css">
+  <link rel="stylesheet" href="css/myProfile.css">
+
+  <script src="js/itemComments.js"></script>
+
   <title>ShareTheLove</title>
   <!-- <link rel="stylesheet" href="css/styles.css"> -->
 
@@ -13,9 +18,61 @@
 </head>
 
 <body>
-	<p>HELLO BROS</p>
-	<!--
+  <div class="header">
+    <h id="headShare" onclick="homePress()">Share the Love</h>
+  </div>
+
+  <div class="profileImageContainer">
+    <img src ="pix/logout_icon.png" id="homeIcon" onclick="logoutPress()">
+    <div class="dropDown">
+
+      <img src="pix/defaultProfile.jpg" id="profileImage" class="profileImageClass"
+        onclick="profilePress()">
+
+    </div>
+  </div>
+
+  <div class="columnContainer">
+    <div class="columnUserInfo">
+      <img src="pix/otherProfile.jpg" id="otherProfile">
+      <br>
+      <p class="contactInfo">Little Bobby Joe</p>
+      <br>
+      <p class="contactInfo">Email: Rando@email.com</p>
+      <p class="contactInfo">Phone: (no)sue-number</p>
+      <p class="contactInfo">FB: fb.com/lbj</p>
+      <br>
+      <p class="contactInfo">Items: soccer ball tape beer</p>
+      <p class="contactInfo">Items: Ganja Lighter Pipe</p>
+    </div>
+    <!--
+    <div class="columnComments">
+      <p class="comments">Me: Hello</p>
+      <p class="comments">Joe: Wut you want?</p>
+      <p class="comments">Me: me borrow tape</p>
+      <p class="comments">Joe: mkay</p>
+      <br/>
+      <textarea rows="4"></textarea>
+      <br/>
+      <button type="submit" onclick="submitCommentPress()">Submit</button>
+    </div> -->
+  </div>
+
+
+
+  <!--
   <script src="js/scripts.js"></script>
-  -->
+
+  <script src="js/itemComments.js"></script> -->
+
+  <!--
+  <script>
+      /* When the user clicks on the button,
+      toggle between hiding and showing the dropdown content */
+      function profilePress() {
+          document.getElementById("profileDropDown").classList.toggle("show");
+          //document.getElementById("test").innerHTML = "New text!";
+      }
+  </script> -->
 </body>
 </html>
