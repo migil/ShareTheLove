@@ -2,6 +2,10 @@ body{
     background-color: #EAE7DC;
     font-family: arial;
 }
+#headShare{
+    font-size: 6vh;
+    margin-top: 1vh;
+}
 div.header{
     z-index: -1;
     position: absolute;

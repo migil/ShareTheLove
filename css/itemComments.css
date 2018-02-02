@@ -21,6 +21,8 @@ div.dropDown{
 }
 #headShare{
     cursor: pointer;
+    font-size: 6vh;
+    margin-top: 1vh;
 }
 
 .show{

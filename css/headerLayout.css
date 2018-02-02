@@ -15,6 +15,10 @@ div.header{
     height: 10vh;
     font-family: 'Times New Roman';
 }
+#headShare{
+    font-size: 6vh;
+    margin-top: 1vh;
+}
 
 #headerButton{
     text-decoration: none;
