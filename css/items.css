@@ -54,19 +54,33 @@ p.columnTitle{
     color: #E85A4F;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
     div.columnHeaderLeft {width: 100%;}
     div.columnHeaderRight {
         width: 100%;
         margin-left: 0px;
         margin-top: 3%;
     }
+    .switch{
+    	width: 25%;
+    }
 }
 
+
+@media only screen and (min-width: 600px) {
+	.switch{
+		width: 15%;
+	}
+}
+
+
 .switch {
+  text-align: center;
+
+  float: right;
+  padding-right: 1%;
   position: relative;
   display: inline-block;
-  width: 13vh;
   height: 6vh;
   margin-top: 1%;
 }
@@ -74,6 +88,8 @@ p.columnTitle{
 .switch input {display:none;}
 
 .slider {
+  text-align: center;
+
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -86,13 +102,12 @@ p.columnTitle{
 }
 
 .slider:before {
-  position: absolute;
+  text-align: center;
   content: "Click to Join";
   height: 4vh;
-  width: 13vh;
   left: 2vh;
   font-size: 2vh;
-  top: 5%;
+  top: 8%;
   bottom: 2vh;
   -webkit-transition: .4s;
   color: darkred;
@@ -182,5 +197,7 @@ div.memberColumn{
     background-color: #E85A4F;
 }
 
-
-
+div.leftdummy{
+  float: left;
+  width: 20%;
+}

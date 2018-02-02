@@ -10,7 +10,6 @@ div.header{
     left: 0;
     color: #E85A4F;
     text-align: center;
-    font-size: 8vh;
     background-color: #D8C3A5;
     height: 10vh;
     font-family: 'Times New Roman';
@@ -22,7 +21,6 @@ div.header{
     right: 0;
     left: 0;
     color: #E85A4F;
-    font-size: 8vh;
     height: 10vh;
     font-family: 'Times New Roman';  
     cursor: pointer;  
@@ -83,4 +81,16 @@ div.dropDown{
     padding: 4px 6px;
     text-decoration: none;
     display: block;
+}
+
+@media only screen and (max-width: 600px) {
+    #headerButton{
+        font-size: 6vh;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    #headerButton{
+        font-size: 8vh;
+    }
 }
