@@ -1,0 +1,101 @@
+div.profileImageContainer{
+    position: relative;
+}
+
+#headShare{
+    cursor: pointer;
+}
+
+.show{
+    display:block;
+}
+
+div.columnContainer{
+    padding-top: 12vh;
+    /*margin: 0 auto;*/
+}
+div.columnContainer:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.columnFiller{
+    float: left;
+    width: 15%;
+}
+div.columnUserInfo{
+    top: 12vh;
+    left: 10%;
+    width: 35%;
+    padding: 2.5%;
+    /* background-color: #E85A4F; */
+    border: 2px solid #D8C3A5;
+    border-radius: 8px;
+
+    margin: 0 auto;
+}
+p.contactInfo{
+    color: #8E8D8A;
+    font-family: Arial;
+    font-size: 16pt;
+}
+p.comments{
+    color: #8E8D8A;
+    font-family: Arial;
+    font-size: 14pt;
+}
+
+
+
+textarea{
+    border-radius: 12px;
+    background-color: #EAE7DC;
+}
+button{
+    padding: 4px;
+    font-size: 14pt;
+    background-color: #E85A4F;
+    border-radius: 12px;
+    color: #EAE7DC;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #EAE7DC;
+    color: #8E8D8A;
+}
+#profileImage{/*
+    position: absolute;
+    top: 0px;
+    right: 0px; */
+    height: 8vh;
+    width: 8vh;
+    cursor: pointer;
+}
+#homeIcon{
+    position: absolute;
+    top: 1vh;
+    left: 1vh;
+    height: 6vh;
+    width: 6vh;
+    cursor: pointer;
+}
+#otherProfile{
+    display: block;
+    margin: auto;
+    width:40%;
+}
+@media only screen and (max-width: 500px) {
+    div.columnUserInfo {width: 100%;}
+    div.columnComments {
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 3%;
+    }
+}
+textarea{
+    width: 80%;
+}
+
+
+
+
