@@ -25,8 +25,7 @@
     <img src ="pix/logout_icon.png" id="homeIcon" onclick="logoutPress()" alt="random.jpg">
     <div class="dropDown">
 
-      <img src="pix/defaultProfile.jpg" id="profileImage" class="profileImageClass" 
-        onclick="profilePress()" alt="random.jpg">
+      <img id="profileImage" class="profileImageClass" onclick="profilePress()">
       <!--
       <div id="profileDropDown" class="dropDownContent">
           <a href="myProfile.html">My Profile Settings</a>
@@ -38,33 +37,84 @@
 
   <div class="columnContainer">
     <div class="columnUserInfo">
-      <img src="pix/otherProfile.jpg" id="otherProfile" alt="random.jpg">
+      <img id="otherProfile">
       <br/>
-      <p class="contactInfo">Item: Tape</p>
-      <p class="contactInfo">Owner: Little Bobby Joe</p>
+      <p id="otherItem" class="contactInfo">Item: </p>
+      <p id="otherOwner" class="contactInfo">Owner: </p>
       <br/>
-      <p class="contactInfo">Email: Rando@email.com</p>
-      <p class="contactInfo">Phone: (no)sue-number</p>
+      <p id="otherEmail" class="contactInfo">Email: </p>
+      <p id="otherPhone" class="contactInfo">Phone: </p>
     </div>
 
-    <div class="columnComments">
+    <div class="columnComments" id="columnComments">
       <!-- <p class="comments" id="test">test: Hello</p> -->
+      <div class="commentsSection" id="commentsSection">
+      <!--
       <p class="comments">Me: Hello</p>
       <p class="comments">Joe: Wut you want?</p>
       <p class="comments">Me: me borrow tape</p>
       <p class="comments">Joe: mkay</p>
+      -->
+      </div>
+
       <br/>
-      <textarea rows="4"></textarea>
+      <textarea id="commentText" rows="4"></textarea>
       <br/>
-      <button type="submit" onclick="submitCommentPress()">Submit</button>
+      <button type="submit" id="submitButton" onclick="submitCommentPress()">
+        Submit
+      </button>
     </div>
   </div>
+<!--
+  <script>
+    var comments = [
+  "Joe: Hello",
+  "Nico: konichiwa",
+  "Joe: me borrow tape",
+  "Nico: Hai Hai"
+]
+    window.onload = function(){
+  alert("Page is loaded");
+  startUp();
+}
 
+function startUp(){
+  comments.forEach(autoCreateComment);
+}
+function autoCreateComment(item, index, arr){
+
+  var para = document.createElement("p");
+  para.className="comments";
+  var node = document.createTextNode(item);
+  para.appendChild(node);
+
+  var getDiv = document.getElementById("commentsSection");
+  getDiv.appendChild(para);
+}
+  </script>
+-->
+
+<!--
+<script>
+  function submitCommentPress(){
+  var comment = document.getElementById("submitButton").value;
+
+  var para = document.createElement("p");
+  para.className="comments";
+  var node = document.createTextNode("Joe" + comment);
+  para.appendChild(node);
+
+  var getDiv = document.getElementById("commentsSection");
+  getDiv.appendChild(para);
+}
+</script>
+-->
 
 
 	<!--
-  <script src="js/scripts.js"></script>
+  <script src="js/scripts.js"></script> -->
 
+  <!--
   <script src="js/itemComments.js"></script> -->
 
   <!--

@@ -2,5 +2,25 @@ function cancelPress(){
     window.location.href = "index.html";
 }
 function submitPress(){
-    window.location.href = "index.html";
+    if (checkCred() == true){
+        // enter data into database at some point
+        window.location.href = "index.html";
+    }
+}
+
+function checkCred(){
+    var accName = document.getElementById("userName").value;
+    var accPass = document.getElementById("userPass").value;
+
+    var okay = true;
+    if(accName.length < 3){
+        okay = false;
+        alert("Please enter a username with 3 or more characters");
+    }
+    else if(accPass.length < 8){
+        okay = false;
+        alert("Please enter a password with 8 or more characters");
+    }
+
+    return okay;
 }
