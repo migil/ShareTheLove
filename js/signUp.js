@@ -21,6 +21,14 @@ function checkCred(){
         okay = false;
         alert("Please enter a password with 8 or more characters");
     }
+    else{
+        if (typeof(Storage) !== "undefined") {
+            sessionStorage.setItem(accName, accPass);
+        } 
+        else {
+            console.log("Sorry, your browser does not support Web Storage...");
+        }
+    }
 
     return okay;
 }

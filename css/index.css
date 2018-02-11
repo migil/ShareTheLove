@@ -67,3 +67,8 @@ input[type=text]{
     width: 75%;
     border-radius: 12px;
 }
+input[type=password]{
+    padding: 4px;
+    width: 75%;
+    border-radius: 12px;
+}
