@@ -18,6 +18,11 @@ var items = [
   "beer"
 ]
 
+var groups = [
+  "Village East 1",
+  "Village East 2"
+]
+
 
 window.onload = function(){
   startUp();
@@ -25,6 +30,7 @@ window.onload = function(){
 
 function startUp(){
   items.forEach(autoCreateItems);
+  groups.forEach(autoCreateGroups);
   setOtherInfo();
 
   var myImg = document.getElementById("profileImage");
@@ -33,7 +39,6 @@ function startUp(){
 };
 
 function autoCreateItems(item, index, arr){
-
   var para = document.createElement("p");
   para.className="contactInfoItem";
   var node = document.createTextNode(item);
@@ -41,27 +46,40 @@ function autoCreateItems(item, index, arr){
 
   var getDiv = document.getElementById("itemSection");
   getDiv.appendChild(para);
-};
+}
+
+function autoCreateGroups(item, index, arr) {
+  // create p tag
+  var para = document.createElement("p");
+  // add class to p tag
+  para.className = "contactInfoItem";
+  // add text to the tag
+  var node = document.createTextNode(item);
+  para.appendChild(node);
+
+  var myDiv = document.getElementById("profileGroups");
+  myDiv.appendChild(para);
+}
 
 function setOtherInfo(){
-  var otherImg = document.getElementById("otherProfile");
-  otherImg.src = "pix/otherProfile.jpg";
+  var otherImg = document.getElementById("profilePic");
+  otherImg.src = "pix/defaultProfile.jpg";
   otherImg.alt = "pix/random.jpeg";
 
-  var para = document.getElementById("otherItem");
-  var node = document.createTextNode("Tape");
+  var para = document.getElementById("profileName");
+  var node = document.createTextNode(Me.myFirstName + " " + Me.myLastName);
   para.appendChild(node);
 
-  para = document.getElementById("otherOwner");
-  node = document.createTextNode(Other.otherFirstName);
+  para = document.getElementById("profileEmail");
+  node = document.createTextNode(Me.myEmail);
   para.appendChild(node);
 
-  para = document.getElementById("otherEmail");
-  node = document.createTextNode(Other.otherEmail);
+  para = document.getElementById("profilePhone");
+  node = document.createTextNode(Me.myPhone);
   para.appendChild(node);
 
-  para = document.getElementById("otherPhone");
-  node = document.createTextNode(Other.otherPhone);
+  para = document.getElementById("profileFacebook");
+  node = document.createTextNode(Me.myFB);
   para.appendChild(node);
 }
 
@@ -87,11 +105,11 @@ function submitItem() {
   addItemButton.style.display = "inline";
 
   var newItem = document.getElementById("newItemText").value;
+  var node = document.createTextNode(newItem);
 
   var para = document.createElement("p");
   para.className="contactInfoItem";
 
-  var node = document.createTextNode(newItem);
   para.appendChild(node);
 
   var getDiv = document.getElementById("itemSection");
@@ -103,13 +121,13 @@ function profilePress() {
     //document.getElementById("profileDropDown").classList.toggle("show");
     //document.getElementById("test").innerHTML = "New text!";
     window.location.href = "myProfile.html";
-};
+}
 function logoutPress(){
   window.location.href = "signIn.html";
-};
+}
 function homePress(){
     window.location.href = "home.html";
-};
+}
 
 function submitCommentPress(){
   var comment = document.getElementById("commentText").value;
@@ -122,7 +140,7 @@ function submitCommentPress(){
 
   var getDiv = document.getElementById("commentsSection");
   getDiv.appendChild(para);
-};
+}
 
 
 
