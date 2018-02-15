@@ -39,6 +39,21 @@ p.contactInfo{
     font-family: Arial;
     font-size: 16pt;
 }
+p.contactInfoItem{
+    color: #8E8D8A;
+    font-family: Arial;
+    font-size: 16pt;
+    padding-left: 3em;
+}
+
+#submitItemButton {
+  display: none;
+}
+
+#newItemText {
+  display: none;
+}
+
 p.comments{
     color: #8E8D8A;
     font-family: Arial;

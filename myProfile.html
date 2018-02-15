@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/myProfile.css">
 
   <script src="js/itemComments.js"></script>
+  <script src="js/myProfile.js"></script>
 
   <title>ShareTheLove</title>
   <!-- <link rel="stylesheet" href="css/styles.css"> -->
@@ -42,20 +43,22 @@
       <p class="contactInfo">Phone: (no)sue-number</p>
       <p class="contactInfo">FB: fb.com/lbj</p>
       <br>
-      <p class="contactInfo">Items: soccer ball tape beer</p>
+      <div id="itemSection">
+        <p class="contactInfo">Items:</p>
+        <!-- <p class="contactInfo">Items: soccer ball, tape, beer</p> -->
+      </div>
+      <button type="submit" id="addItemButton" onclick="addItem()">
+        Add another item
+      </button>
+      <br>
+        <textarea id="newItemText" rows="4" cols="50" placeholder="Enter new item"></textarea>
+      <br>
+      <button type="submit" id="submitItemButton" onclick="submitItem()">
+        Submit
+      </button>
+
       <p class="contactInfo">Groups: Village East 1, Village East 2</p>
     </div>
-    <!--
-    <div class="columnComments">
-      <p class="comments">Me: Hello</p>
-      <p class="comments">Joe: Wut you want?</p>
-      <p class="comments">Me: me borrow tape</p>
-      <p class="comments">Joe: mkay</p>
-      <br/>
-      <textarea rows="4"></textarea>
-      <br/>
-      <button type="submit" onclick="submitCommentPress()">Submit</button>
-    </div> -->
   </div>
 
 
