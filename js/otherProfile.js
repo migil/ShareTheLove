@@ -49,7 +49,7 @@ function startUp(){
   
 
 function logoutPress(){
-    window.location.href = "index.html";
+    window.location.href = "signIn.html";
 }
 
 function homePress(){

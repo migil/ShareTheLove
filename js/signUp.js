@@ -1,10 +1,10 @@
 function cancelPress(){
-    window.location.href = "index.html";
+    window.location.href = "signIn.html";
 }
 function submitPress(){
     if (checkCred() == true){
         // enter data into database at some point
-        window.location.href = "index.html";
+        window.location.href = "signIn.html";
     }
 }
 

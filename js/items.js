@@ -3,5 +3,5 @@ function profilePress() {
 }
 
 function logoutPress(){
-  window.location.href = "index.html";
+  window.location.href = "signIn.html";
 }
