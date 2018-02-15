@@ -94,11 +94,14 @@ button:hover{
     width: 6vh;
     cursor: pointer;
 }
-#otherProfile{
+#profilePic {
     display: block;
     margin: auto;
     width:40%;
 }
+#profileName {
+}
+
 @media only screen and (max-width: 500px) {
     div.columnUserInfo {width: 100%;}
     div.columnComments {
