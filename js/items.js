@@ -6,7 +6,6 @@ function logoutPress(){
   window.location.href = "signIn.html";
 }
 
-
 var Me ={
   myFirstName : "Joe",
   myLastName : "Schmoe",
@@ -20,8 +19,8 @@ var Me ={
   myGroups : "Village East 1, Village East 2"
 };
 
-
 var members = [
+  "Joe Schmoe",
   "Justin Gil",
   "Scott Chen",
   "Michael Cheng",
@@ -37,12 +36,10 @@ var itemList = [
 	"Vacuum cleaner (Leo)"
 ];
 
-
 function startUp(){
 	members.forEach(createMembers);
 	itemList.forEach(createItems);
 };
-
 
 function createMembers(item, index, arr){
   var para = document.createElement("p");
