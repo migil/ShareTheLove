@@ -43,12 +43,12 @@
 
       <div class="titleAndToggle">
         <div id="groupTitle" class="columnTitle"></div>
-        <div class="groupToggle">
-          <input type="checkbox" data-toggle="toggle" data-on="Enabled" data-off="Disabled">
+        <div class="groupToggle" onclick="joinToggle(inputToggle)">
+          <input id="inputToggle" type="checkbox" data-toggle="toggle" data-on="Join" data-off="Joined"" >
         </div>
       </div>
 
-      <div id="itemList" class="itemsColumn"></div>
+      <div id="itemDiv" class="itemsColumn"></div>
     </div>
 
     <div class="columnHeaderRight">
