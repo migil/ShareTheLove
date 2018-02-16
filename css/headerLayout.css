@@ -34,7 +34,6 @@ a:hover {
     cursor: pointer;
 }
 
-
 div.profileImageContainer{
     position: relative;
 }
@@ -49,6 +48,7 @@ div.profileImageContainer{
 }
 
 div.dropDown{
+    padding-right: 8px;
     position: absolute;
     top: 0.8vh;
     right: 0px;
@@ -76,7 +76,7 @@ div.dropDown{
     top: 0px;
     right: 0px; */
     height: 8vh;
-    width: 8vh; 
+    width: 8vh;
     cursor: pointer;
 }
 

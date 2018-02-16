@@ -44,11 +44,11 @@ div.columnHeaderRight{
 }
 
 p.columnTitle{
-    float: left;
-    width: 70%;
     margin-top: 0px;
     margin-bottom: 2%;
     text-align: center;
+    float: left;
+    width: 95%;
     font-size: 5vh;
     font-family: 'Times New Roman';
     color: #E85A4F;
@@ -145,7 +145,7 @@ div.itemsColumn{
     height: fit-content;
     float: left;
     top: 12vh;
-    width: 96%;
+    width: 95%;
     padding: 2.5%;
     padding-top: 0px;
     border: 2px solid #E85A4F;
@@ -164,11 +164,6 @@ div.memberColumn{
     border: 2px solid #E85A4F;
     border-radius: 8px;
 }
-
-
-
-
-
 
 .itemsColumn a.button {
     margin-top: 1%;
@@ -198,7 +193,16 @@ div.memberColumn{
     background-color: #E85A4F;
 }
 
-div.leftdummy{
+div.groupToggle{
+    float: right;
+    margin-right: 10px;
+}
+
+div.titleAndToggle{
   float: left;
-  width: 20%;
+  width: 96%;
+}
+div.columnTitle{
+  float: left;
+  width: 70%;
 }
