@@ -7,17 +7,26 @@
   <link rel="stylesheet" href="css/headerLayout.css">
   <script src="js/items.js"></script>
   <title>ShareTheLove</title>
-  <!-- <link rel="stylesheet" href="css/styles.css"> -->
 
-  <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-  <![endif]-->
+  <!-- BOOTSTRAP Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
 </head>
 
 <body>
+  
   <div class="header">
     <a id="headerButton" href="home.html" class="button" >Share the Love</a>
   </div>
+
 
   <div class="profileImageContainer">
     <img src ="pix/logout_icon.png" id="homeIcon" onclick="logoutPress()">
@@ -31,43 +40,18 @@
 
   <div class="columnContainer">
     <div class="columnHeaderLeft">
-      <div class="leftdummy"></div>
-      <p class="columnTitle">Village East 1</p>
-
-
-      <label id="joined" class="switch">
-        <input id="joined" type="checkbox">
-        <span class="slider round"></span>
-      </label>
-
-      <div id="itemList" class="itemsColumn">
-        <!--
-        <a href="itemComments.html" class="button">Tape (Scott)</a>
-        <a href="itemComments.html" class="button">Post it (Michael)</a>
-        <a href="itemComments.html" class="button">Rice cooker (Brandon)</a>
-        <a href="itemComments.html" class="button">HDMI (Chris)</a>
-        <a href="itemComments.html" class="button">Screw driver (Justin)</a>
-        <a href="itemComments.html" class="button">Vacuum cleaner (Leo)</a>
-      -->
-      </div>
-
+      <div id="groupTitle"></div>
+      <div id="itemList" class="itemsColumn"></div>
     </div>
 
     <div class="columnHeaderRight">
       <div>
         <p class="columnTitle">Members</p>
       </div>
-
-      <div class="memberColumn">
-        <div id="membersDiv"> </div>
-        <!--
-        <p class="memberElem">Justin Gil</p>
-        <p class="memberElem">Scott Chen</p>
-        <p class="memberElem">Michael Cheng </p>
-        <p class="memberElem">Derrick Wong</p>
-      -->
-      </div>
+      <div id="membersDiv" class="memberColumn"> </div>
     </div>
   </div>
+
+
 </body>
 </html>

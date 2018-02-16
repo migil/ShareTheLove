@@ -39,6 +39,7 @@ var itemList = [
 function startUp(){
 	members.forEach(createMembers);
 	itemList.forEach(createItems);
+  displayCurrentGroup();
 };
 
 function createMembers(item, index, arr){
@@ -59,6 +60,15 @@ function createItems(item, index, arr){
   var getDiv = document.getElementById("itemList");
   getDiv.appendChild(para);
 };
+
+function displayCurrentGroup(){
+  var para = document.createElement("p");
+  para.className = "columnTitle";
+  var node =document.createTextNode("Village East 1");
+  para.appendChild(node);
+  var getDiv = document.getElementById("groupTitle");
+  getDiv.appendChild(para);
+}
 
 window.onload = function(){
   startUp();
