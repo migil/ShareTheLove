@@ -6,7 +6,6 @@ function logoutPress(){
   window.location.href = "signIn.html";
 }
 
-
 var Me ={
   myFirstName : "Joe",
   myLastName : "Schmoe",
@@ -20,8 +19,8 @@ var Me ={
   myGroups : "Village East 1, Village East 2"
 };
 
-
 var members = [
+  "Joe Schmoe",
   "Justin Gil",
   "Scott Chen",
   "Michael Cheng",
@@ -37,12 +36,11 @@ var itemList = [
 	"Vacuum cleaner (Leo)"
 ];
 
-
 function startUp(){
 	members.forEach(createMembers);
 	itemList.forEach(createItems);
+  displayCurrentGroup();
 };
-
 
 function createMembers(item, index, arr){
   var para = document.createElement("p");
@@ -62,6 +60,15 @@ function createItems(item, index, arr){
   var getDiv = document.getElementById("itemList");
   getDiv.appendChild(para);
 };
+
+function displayCurrentGroup(){
+  var para = document.createElement("p");
+  para.className = "columnTitle";
+  var node =document.createTextNode("Village East 1");
+  para.appendChild(node);
+  var getDiv = document.getElementById("groupTitle");
+  getDiv.appendChild(para);
+}
 
 window.onload = function(){
   startUp();

@@ -154,11 +154,12 @@ div.itemsColumn{
 
 
 div.memberColumn{
+    font-size: 2.5vh;
     height: fit-content;
     float: left;
     margin-top: 2%;
     padding-left: 2.5%;
-    padding-top: 0px;
+    padding-top: 10px;
     width: 96%;
     border: 2px solid #E85A4F;
     border-radius: 8px;
