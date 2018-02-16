@@ -14,6 +14,9 @@ var Other ={
 
 function startUp(){
     setOtherInfo();
+    var myImg = document.getElementById("profileImage");
+    myImg.src = "pix/defaultProfile.jpg";
+    myImg.alt = "pix/random.jpeg";
 };
   
   function setOtherInfo(){
