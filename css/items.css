@@ -47,7 +47,6 @@ p.columnTitle{
     margin-top: 0px;
     margin-bottom: 2%;
     text-align: center;
-    float: left;
     width: 95%;
     font-size: 5vh;
     font-family: 'Times New Roman';
@@ -193,16 +192,27 @@ div.memberColumn{
     background-color: #E85A4F;
 }
 
-div.groupToggle{
-    float: right;
-    margin-right: 10px;
-}
 
 div.titleAndToggle{
   float: left;
   width: 96%;
 }
+
+div.groupToggle{
+  display: table-cell;       
+  text-align: right;
+  width: 20%;
+  margin-right: 10px;
+}
+
 div.columnTitle{
-  float: left;
-  width: 70%;
+  display: table-cell;       
+  text-align: center; 
+  width: 70%;   
+}
+
+div.dummyDiv{
+  display: table-cell;       
+  text-align: left; 
+  width: 20%;   
 }
