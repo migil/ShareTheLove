@@ -38,9 +38,26 @@ function startUp(){
   myImg.alt = "pix/random.jpeg";
 };
 
+var counter= 1;
 function autoCreateItems(item, index, arr){
-  var para = document.createElement("p");
+  var para = document.createElement("button");
   para.className="contactInfoItem";
+
+  para.id = "item_button_" + counter;
+  //para.onclick = toggle(para.id);
+  para.onclick = function() {
+
+    if (para.style.backgroundColor == "rgb(234, 231, 220)" || para.style.backgroundColor == "") {
+      para.style.backgroundColor = "red";
+    } else {
+      para.style.backgroundColor = "rgb(234, 231, 220)";
+    }
+
+    console.log(para.style.backgroundColor);
+    console.log(para.style.color);
+  }
+  counter += 1;
+
   var node = document.createTextNode(item);
   para.appendChild(node);
 
@@ -48,11 +65,23 @@ function autoCreateItems(item, index, arr){
   getDiv.appendChild(para);
 }
 
+/*
+function toggle(wtf) {
+  console.log("wtf");
+  console.log(wtf);
+  var textColor = document.getElementById(wtf).style.color;
+  if (textColor == "#555") {
+      document.getElementById(id).style.background = "red";
+  } else {
+      document.getElementById(id).style.background = "rgba(204, 201, 190, 1)";
+  }
+}*/
+
 function autoCreateGroups(item, index, arr) {
   // create p tag
   var para = document.createElement("p");
   // add class to p tag
-  para.className = "contactInfoItem";
+  para.className = "contactInfoGroup";
   // add text to the tag
   var node = document.createTextNode(item);
   para.appendChild(node);
@@ -107,8 +136,10 @@ function submitItem() {
   var newItem = document.getElementById("newItemText").value;
   var node = document.createTextNode(newItem);
 
-  var para = document.createElement("p");
+  var para = document.createElement("button");
   para.className="contactInfoItem";
+  para.id = "item_button_" + counter;
+  counter += 1;
 
   para.appendChild(node);
 

@@ -43,6 +43,28 @@ p.contactInfoItem{
     color: #8E8D8A;
     font-family: Arial;
     font-size: 16pt;
+    /*padding-left: 3em;*/
+    width: 65%;
+    margin: 0.5em auto;
+    text-align: center;
+    border: solid 2px;
+    border-radius: 7px;
+}
+
+button.contactInfoItem {
+  background: rgb(204, 201, 190);
+  color: black;
+}
+
+button.contactInfoItem:hover{
+    background: #EAE7DC;
+    color: black;
+}
+
+p.contactInfoGroup{
+    color: #8E8D8A;
+    font-family: Arial;
+    font-size: 16pt;
     padding-left: 3em;
 }
 
