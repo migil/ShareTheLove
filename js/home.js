@@ -217,15 +217,7 @@ function autoCreateItems(item, index, arr) {
   para.id = "item_button_" + counter;
   //para.onclick = toggle(para.id);
   para.onclick = function() {
-
-    if (para.style.backgroundColor == "rgb(234, 231, 220)" || para.style.backgroundColor == "") {
-      para.style.backgroundColor = "red";
-    } else {
-      para.style.backgroundColor = "rgb(234, 231, 220)";
-    }
-
-    console.log(para.style.backgroundColor);
-    console.log(para.style.color);
+    itemButtonColorToggle(para, para.id);
   }
   counter += 1;
 
@@ -302,6 +294,10 @@ function submitItem() {
   para.className="contactInfoItem";
   para.id = "item_button_" + counter;
   counter += 1;
+  para.onclick = function() {
+    itemButtonColorToggle(para, para.id);
+  }
+  counter += 1;
 
   para.appendChild(node);
 
@@ -309,6 +305,16 @@ function submitItem() {
   getDiv.appendChild(para);
 }
 
+function itemButtonColorToggle(elem, id) {
+  console.log(elem);
+  console.log(id);
+  if (elem.style.backgroundColor == "rgb(234, 231, 220)" || elem.style.backgroundColor == "") {
+    elem.style.backgroundColor = "red";
+  } else {
+    elem.style.backgroundColor = "rgb(234, 231, 220)";
+    //document.getElementById(id).classList.add("enabledItemButton");
+  }
+}
 
 
 // *********************************************************************************
