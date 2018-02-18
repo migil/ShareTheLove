@@ -16,11 +16,11 @@ div.profileImageContainer{
     text-decoration: none;
     display: block;
 }
-div.columnContainer{
+div.columnContainerItemComments{
     padding-top: 12vh;
     padding-left: 15%;
 }
-div.columnContainer:after {
+div.columnContainerItemComments:after {
     content: "";
     display: table;
     clear: both;
@@ -29,7 +29,7 @@ div.columnContainer:after {
     float: left;
     width: 15%;
 }
-div.columnUserInfo{
+div.columnUserInfoItemComments {
     float: left;
     top: 12vh;
     left: 10%;
@@ -43,7 +43,7 @@ div.columnComments{
     float: left;
     padding: 2.5%;
     width: 35%;
-    background-color: #D8C3A5; 
+    background-color: #D8C3A5;
     overflow: scroll;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -83,7 +83,7 @@ button:hover{
     top: 0px;
     right: 0px; */
     height: 8vh;
-    width: 8vh; 
+    width: 8vh;
     cursor: pointer;
 }
 #homeIcon{
@@ -100,7 +100,7 @@ button:hover{
     width:40%;
 }
 @media only screen and (max-width: 500px) {
-    div.columnUserInfo {width: 100%;}
+    div.columnUserInfoItemComments {width: 100%;}
     div.columnComments {
         width: 100%;
         margin-left: 0px;

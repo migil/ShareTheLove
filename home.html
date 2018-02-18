@@ -6,17 +6,25 @@
   <title>ShareTheLove</title>
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/headerLayout.css">
-  
+  <link rel="stylesheet" href="css/myProfile.css">
+  <link rel="stylesheet" href="css/items.css">
+  <link rel="stylesheet" href="css/itemComments.css">
+
   <!-- BOOTSTRAP Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
-  <script src="js/itemComments.js"></script>
-  <script src="js/home.js"></script>
 
+  <!-- Bootstrap Toggle -->
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+
+
+  <!-- script src="js/itemComments.js"></script> -->
+  <script src="js/home.js"></script>
 
 
   <!-- <link rel="stylesheet" href="css/styles.css"> -->
@@ -27,21 +35,24 @@
 </head>
 
 <body>
-  	<div class="header">
-      <a id="headerButton" href="#" class="button" >Share the Love</a>
+
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Header bar ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<div class="header">
+    <a id="headerButton" href="#" class="button" onclick="homePress()" >Share the Love</a>
+  </div>
+
+  <div class="profileImageContainer">
+    <img src ="pix/logout_icon.png" id="homeIcon" onclick="logoutPress()">
+    <div class="dropDown">
+
+      <img src="pix/defaultProfile.jpg" id="profileImage" class="profileImageClass"
+        onclick="profilePress()">
+
     </div>
+  </div>
 
-    <div class="profileImageContainer">
-      <img src ="pix/logout_icon.png" id="homeIcon" onclick="logoutPress()">
-      <div class="dropDown">
-
-        <img src="pix/defaultProfile.jpg" id="profileImage" class="profileImageClass"
-          onclick="profilePress()">
-
-      </div>
-    </div>
-
-
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ original home.html ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <div id="home_page">
   	<div class="columnContainer">
 
       <div class="columnHeaderLeft">
@@ -62,5 +73,93 @@
       </div>
 
   	</div>
+  </div>
+
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ myProfile.html ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <div id="myProfile_page" style="display: none">
+    <div class="columnContainerMyProfile">
+    <div class="columnUserInfoMyProfile">
+      <img id="profilePic">
+      <br>
+      <h3 class="contactInfo" id="profileName"></h3>
+      <p class="contactInfo" id="profileEmail">Email: </p>
+      <p class="contactInfo" id="profilePhone">Phone: </p>
+      <p class="contactInfo" id="profileFacebook">FB: </p>
+      <div id="itemSection">
+        <p class="contactInfo">Items:</p>
+        <!-- <p class="contactInfo">Items: soccer ball, tape, beer</p> -->
+      </div>
+      <button type="submit" id="addItemButton" onclick="addItem()">
+        Add another item
+      </button>
+      <br>
+        <textarea id="newItemText" rows="4" cols="50" placeholder="Enter new item"></textarea>
+      <br>
+      <button type="submit" id="submitItemButton" onclick="submitItem()">
+        Submit
+      </button>
+
+      <p class="contactInfo" id="profileGroups">Groups: </p>
+    </div>
+    </div>
+  </div>
+
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ items.html ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <div id="items_page" style="display: none">
+    <div class="columnContainerHome">
+    <div class="columnHeaderLeft">
+
+      <div class="titleAndToggle">
+        <div class="dummyDiv"> </div>
+        <div id="groupTitle" class="columnTitle"></div>
+        <div class="groupToggle" onclick="joinToggle(inputToggle)">
+          <input id="inputToggle" type="checkbox" data-toggle="toggle" data-on="Join" data-off="Joined" >
+        </div>
+      </div>
+
+      <div id="itemDiv" class="itemsColumn"></div>
+    </div>
+
+    <div class="columnHeaderRight">
+      <div>
+        <p class="columnTitle">Members</p>
+      </div>
+      <div id="membersDiv" class="memberColumn"> </div>
+    </div>
+    </div>
+  </div>
+
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ itemComments.html ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <div id="itemComments_page" style="display: none">
+    <div class="columnContainerItemComments">
+    <div class="columnUserInfoItemComments">
+      <img id="otherProfile">
+      <br/>
+      <p id="otherItem" class="contactInfo">Item: </p>
+      <p id="otherOwner" class="contactInfo">Owner: </p>
+      <br/>
+      <p id="otherEmail" class="contactInfo">Email: </p>
+      <p id="otherPhone" class="contactInfo">Phone: </p>
+    </div>
+
+    <div class="columnComments" id="columnComments">
+      <!-- <p class="comments" id="test">test: Hello</p> -->
+      <div class="commentsSection" id="commentsSection">
+      <!--
+      <p class="comments">Me: Hello</p>
+      ...
+      -->
+      </div>
+
+      <br/>
+      <textarea id="commentText" rows="4"></textarea>
+      <br/>
+      <button type="submit" id="submitButton" onclick="submitCommentPress()">
+        Submit
+      </button>
+    </div>
+  </div>
+  </div>
+
 </body>
 </html>

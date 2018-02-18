@@ -10,11 +10,11 @@ div.profileImageContainer{
     display:block;
 }
 
-div.columnContainer{
+div.columnContainerMyProfile{
     padding-top: 12vh;
     /*margin: 0 auto;*/
 }
-div.columnContainer:after {
+div.columnContainerMyProfile:after {
     content: "";
     display: table;
     clear: both;
@@ -23,7 +23,7 @@ div.columnContainer:after {
     float: left;
     width: 15%;
 }
-div.columnUserInfo{
+div.columnUserInfoMyProfile{
     top: 12vh;
     left: 10%;
     width: 35%;
@@ -125,7 +125,7 @@ button:hover{
 }
 
 @media only screen and (max-width: 500px) {
-    div.columnUserInfo {width: 100%;}
+    div.columnUserInfoMyProfile {width: 100%;}
     div.columnComments {
         width: 100%;
         margin-left: 0px;
