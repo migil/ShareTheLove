@@ -11,6 +11,10 @@ function submitPress(){
 function checkCred(){
     var accName = document.getElementById("userName").value;
     var accPass = document.getElementById("userPass").value;
+    var email = document.getElementById("userEmail").value;
+
+
+
 
     var okay = true;
     if(accName.length < 3){
@@ -20,6 +24,10 @@ function checkCred(){
     else if(accPass.length < 8){
         okay = false;
         alert("Please enter a password with 8 or more characters");
+    }
+    else if(!email.endsWith("@ucsd.edu")){
+        okay = false;
+        alert("Please use your UCSD email");
     }
     else{
         if (typeof(Storage) !== "undefined") {
@@ -32,3 +40,9 @@ function checkCred(){
 
     return okay;
 }
+
+
+function emailValidation(){
+
+}
+

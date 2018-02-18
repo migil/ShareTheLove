@@ -159,8 +159,8 @@ function joinToggle(checkbox)
 
 
 
-
-
+//issue 1) join state shuold be checked when a user clicks a group
+//issue 2) alien toggle button -> 
 
 
 
