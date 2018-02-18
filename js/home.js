@@ -3,8 +3,8 @@
 */
 window.onload = function() {
   startUpHomePage();
-  startUpMyProfilePage();
-  startUpItemsPage();
+  //startUpMyProfilePage();
+  //startUpItemsPage();
   startUpItemCommentsPage();
 }
 
@@ -30,11 +30,14 @@ function createFeeds(item, index, arr){
   getDiv.appendChild(para);
 };
 
+var groupCounter = 1;
 function createGroups(item, index, arr){
   var para = document.createElement("a");
   para.className="button";
+  para.id = "groupIndex" + groupCounter;
+  groupCounter++;
   para.onclick = function() {
-    groupPress();
+    groupPress(para.id);
   }
   var node = document.createTextNode(item);
   para.appendChild(node);
@@ -65,9 +68,14 @@ function profilePress() {
   document.getElementById("itemComments_page").style.display = "none";
 }
 
-function groupPress() {
+function groupPress(id) {
   document.getElementById("items_page").style.display = "inline";
-  startUpItemsPage();
+
+  // grab group name
+  console.log(id);
+  var groupParam = document.getElementById(id).innerHTML;
+  console.log(groupParam);
+  startUpItemsPage(groupParam);
 
   // hide all other pages
   document.getElementById("home_page").style.display = "none";
@@ -77,6 +85,7 @@ function groupPress() {
 
 function itemPress() {
   document.getElementById("itemComments_page").style.display = "inline";
+  //startUpItemCommentsPage();
 
   // hide all other pages
   document.getElementById("home_page").style.display = "none";
@@ -268,12 +277,13 @@ var itemFetchList;
 var groupNameTitle;
 var titleItem;
 
-function startUpItemsPage(){
+function startUpItemsPage(groupNameParam){
   memList = document.getElementsByClassName("memberElem");
   memberDiv = document.getElementById("membersDiv");
   itemDiv = document.getElementById("itemDiv");
   itemFetchList = document.getElementsByClassName("button items");
   titleItem = document.getElementById("groupTitle");
+  titleFetchList = document.getElementsByClassName("columnGroupTitle");
 
   //delete item list
   for(var i = itemFetchList.length - 1; 0 <= i; i--){
@@ -286,10 +296,19 @@ function startUpItemsPage(){
       memList[i].parentElement.removeChild(memList[i]);
   }
 
-  VilEast1.memberList.forEach(createMembers);
-  VilEast1.groupItemList.forEach(createItems);
+  //delete group title
+  
+  for(var i = titleFetchList.length - 1; 0 <= i; i--){
+    if(titleFetchList[i] && titleFetchList[i].parentElement)
+      titleFetchList[i].parentElement.removeChild(titleFetchList[i]);
+  }
 
-  displayCurrentGroup();
+  paramObject = groupMap[groupNameParam];
+  paramObject.memberList.forEach(createMembers);
+  paramObject.groupItemList.forEach(createItems);
+
+  console.log(groupNameParam);
+  displayCurrentGroup(groupNameParam);
 };
 
 
@@ -329,21 +348,23 @@ function createItems(item, index, arr) {
   itemDiv.appendChild(para);
 };
 
-function displayCurrentGroup() {
-  if(!titleItem.hasChildNodes()){  
+function displayCurrentGroup(groupNameParam) {
     groupNameTitle = document.createElement("p");
-    groupNameTitle.className = "columnTitle";
-    var node = document.createTextNode("Village East 1");
+    groupNameTitle.className = "columnGroupTitle";
+    //groupNameTitle.id = "columnTitle";
+    var node = document.createTextNode(groupNameParam);
     groupNameTitle.appendChild(node);
     var getDiv = document.getElementById("groupTitle");
     getDiv.appendChild(groupNameTitle);
-  }
 }
 
 function joinToggle(checkbox) {
+    //var groupName = titleItem.childNodes[0].innerHTML;
+    var groupName = document.getElementById("groupTitle").childNodes[0].innerHTML;
+    console.log(groupName);
+    groupObject = groupMap[groupName];
     //toggle on
     if (!checkbox.checked){
-        var groupName = titleItem.childNodes[0].innerHTML;
         Me.myGroupList.push(groupName);
 
         for(var i = memList.length - 1; 0 <= i; i--){
@@ -351,8 +372,8 @@ function joinToggle(checkbox) {
             memList[i].parentElement.removeChild(memList[i]);
         }
 
-        VilEast1.memberList.push(Me.fullName);
-        VilEast1.memberList.forEach(createMembers);
+        groupObject.memberList.push(Me.fullName);
+        groupObject.memberList.forEach(createMembers);
 
         for(var i = itemFetchList.length - 1; 0 <= i; i--){
           if(itemFetchList[i] && itemFetchList[i].parentElement)
@@ -361,14 +382,13 @@ function joinToggle(checkbox) {
 
         for(var i = 0; i < Me.myItemList.length; i++){
           var myItemToAdd = Me.myItemList[i];
-          VilEast1.groupItemList.push(myItemToAdd);
+          groupObject.groupItemList.push(myItemToAdd);
         }
-        VilEast1.groupItemList.forEach(createItems);
+        groupObject.groupItemList.forEach(createItems);
 
     }
     //toggle off
     else{
-      var groupName = titleItem.childNodes[0].innerHTML;
       Me.myGroupList.splice(Me.myGroupList.indexOf(groupName), 1)
       //clear the memList
         for(var i = memList.length - 1; 0 <= i; i--){
@@ -377,8 +397,8 @@ function joinToggle(checkbox) {
         }
 
         //cut off the my name from the meemberArray
-        VilEast1.memberList.splice(VilEast1.memberList.indexOf(Me.fullName), 1);
-        VilEast1.memberList.forEach(createMembers);
+        groupObject.memberList.splice(groupObject.memberList.indexOf(Me.fullName), 1);
+        groupObject.memberList.forEach(createMembers);
 
 
         //clear all thes item from the displayList
@@ -388,9 +408,9 @@ function joinToggle(checkbox) {
         }
         //remove my items from itemListArray
         for(var i = 0; i < Me.myItemList.length; i++){
-          VilEast1.groupItemList.splice(VilEast1.groupItemList.indexOf(Me.myItemList[i]), 1);
+          groupObject.groupItemList.splice(groupObject.groupItemList.indexOf(Me.myItemList[i]), 1);
         }
-        VilEast1.groupItemList.forEach(createItems);
+        groupObject.groupItemList.forEach(createItems);
     }
 }
 

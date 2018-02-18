@@ -53,6 +53,16 @@ p.columnTitle{
     color: #E85A4F;
 }
 
+.columnGroupTitle {
+    margin-top: 0px;
+    margin-bottom: 2%;
+    text-align: center;
+    width: 95%;
+    font-size: 5vh;
+    font-family: 'Times New Roman';
+    color: #E85A4F;
+}
+
 @media only screen and (max-width: 600px) {
     div.columnHeaderLeft {width: 100%;}
     div.columnHeaderRight {

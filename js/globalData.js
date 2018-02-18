@@ -36,7 +36,7 @@ var tempFeedList  = new Array (
 var tempMemberList = new Array("Justin Gil", "Scott Chen", "Michael Cheng", "Derrick Wong");
 var tempGroupItemList = new Array("Tape", "Post it", "Rice cooker", "HDMI", "Screw driver","Vacuum cleaner");
 
-var tempMemberList2 = new Array("Derrick Wong", "Scott Chen", "Michael Cheng", "Derrick Wong");
+var tempMemberList2 = new Array("Derrick Wong", "Scott Chen", "Michael Cheng", "Tejas Shetty");
 var tempGroupItemList2 = new Array("Tape", "Post it", "iPhone X", "desktop", "Screw driver","Vacuum cleaner");
 
 //UserProfiles
@@ -59,7 +59,6 @@ var groupMap = {
   "Village East 1" : VilEast1,
   "Village West 3" : VilWest3 
 };
-
 
 //Michael? 
 var Other ={
