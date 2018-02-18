@@ -47,7 +47,6 @@ function createGroups(item, index, arr){
    ~~~~~~~~~~~~~ Routing: Navigating to different pages ~~~~~~~~~~~~~~~~~~~~~~~~
 */
 function homePress(){
-  console.log("to home page!");
   document.getElementById("home_page").style.display = "inline";
 
   // hide all other pages
@@ -57,8 +56,8 @@ function homePress(){
 }
 
 function profilePress() {
-  console.log("to profile page!");
   document.getElementById("myProfile_page").style.display = "inline";
+  startUpMyProfilePage();
 
   // hide all other pages
   document.getElementById("home_page").style.display = "none";
@@ -67,9 +66,7 @@ function profilePress() {
 }
 
 function groupPress() {
-  console.log("to group page!");
   document.getElementById("items_page").style.display = "inline";
-  console.log(Me.myItemList);
   startUpItemsPage();
 
   // hide all other pages
@@ -79,7 +76,6 @@ function groupPress() {
 }
 
 function itemPress() {
-  console.log("to item comments page!");
   document.getElementById("itemComments_page").style.display = "inline";
 
   // hide all other pages
@@ -110,7 +106,7 @@ window.onclick = function(event) {
   }
 }
 
-
+var setProfileFlag = false;
 // *********************************************************************************
 //***************************  myProfile.html   ************************************
 // *********************************************************************************
@@ -119,11 +115,27 @@ window.onclick = function(event) {
    ~~~~~~~~~~~~~~~~ Loads profile info for myProfile.html ~~~~~~~~~~~~~~~~
 */
 function startUpMyProfilePage() {
-  console.log(Me.myItemList);
+
+  //delete group list
+  var groupFetchList = document.getElementsByClassName("contactInfoGroup");
+  for(var i = groupFetchList.length - 1; 0 <= i; i--){
+    if(groupFetchList[i] && groupFetchList[i].parentElement)
+      groupFetchList[i].parentElement.removeChild(groupFetchList[i]);
+  }
+
+  groupFetchList = document.getElementsByClassName("contactInfoItem");
+  for(var i = groupFetchList.length - 1; 0 <= i; i--){
+    if(groupFetchList[i] && groupFetchList[i].parentElement)
+      groupFetchList[i].parentElement.removeChild(groupFetchList[i]);
+  }
 
   Me.myItemList.forEach(autoCreateItems);
   Me.myGroupList.forEach(autoCreateGroups);
-  setOtherInfoMyProfilePage();
+
+  if (!setProfileFlag) {
+    setOtherInfoMyProfilePage();
+    setProfileFlag = true;
+  }
 
   var myImg = document.getElementById("profileImage");
   myImg.src = "pix/defaultProfile.jpg";
@@ -132,7 +144,6 @@ function startUpMyProfilePage() {
 
 var counter= 1;
 function autoCreateItems(item, index, arr) {
-  console.log(item);
   var para = document.createElement("button");
   para.className="contactInfoItem";
 
@@ -229,21 +240,15 @@ function submitItem() {
   // update Me's list of items
   Me.myItemList.push(newItem);
 
-  console.log(Me.myGroupList);
-
   // for each group Me is in, their item list must be updated as well
   for (var i = 0; i < Me.myGroupList.length; i++) {
     // grab the freaking group object
     groupMap[Me.myGroupList[i]].groupItemList.push(newItem);
-    console.log(Me.myGroupList[i]);
   }
-
-  console.log(Me.myItemList);
 }
 
 function itemButtonColorToggle(elem, id) {
-  console.log(elem);
-  console.log(id);
+
   if (elem.style.backgroundColor == "rgb(234, 231, 220)" || elem.style.backgroundColor == "") {
     elem.style.backgroundColor = "red";
   } else {
@@ -283,8 +288,6 @@ function startUpItemsPage(){
 
   VilEast1.memberList.forEach(createMembers);
   VilEast1.groupItemList.forEach(createItems);
-
-  console.log(VilEast1.groupItemList);
 
   displayCurrentGroup();
 };
@@ -449,16 +452,4 @@ function submitCommentPress() {
   var getDiv = document.getElementById("commentsSection");
   getDiv.appendChild(para);
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
