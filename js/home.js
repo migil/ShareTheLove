@@ -197,7 +197,7 @@ function setOtherInfoMyProfilePage() {
   para.appendChild(node);
 
   para = document.getElementById("profilePhone");
-  node = document.createTextNode(Me.phone);
+  node = document.createTextNode(Me.phoneNumber);
   para.appendChild(node);
 
   para = document.getElementById("profileFacebook");
@@ -254,6 +254,10 @@ function submitItem() {
     // grab the freaking group object
     groupMap[Me.myGroupList[i]].groupItemList.push(newItem);
   }
+
+  // flush out the text the user entered
+  var textArea = document.getElementById("newItemText");
+  textArea.value = "";
 }
 
 function itemButtonColorToggle(elem, id) {
@@ -297,7 +301,7 @@ function startUpItemsPage(groupNameParam){
   }
 
   //delete group title
-  
+
   for(var i = titleFetchList.length - 1; 0 <= i; i--){
     if(titleFetchList[i] && titleFetchList[i].parentElement)
       titleFetchList[i].parentElement.removeChild(titleFetchList[i]);
@@ -466,10 +470,14 @@ function submitCommentPress() {
   var para = document.createElement("p");
   para.className="comments";
 
-  var node = document.createTextNode(Me.myFirstName + ": " + comment);
+  var node = document.createTextNode(Me.firstName + ": " + comment);
   para.appendChild(node);
 
   var getDiv = document.getElementById("commentsSection");
   getDiv.appendChild(para);
+
+  // flush out the text the user entered
+  var textArea = document.getElementById("commentText");
+  textArea.value = "";
 }
 
