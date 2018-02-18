@@ -156,6 +156,13 @@ function autoCreateItems(item, index, arr) {
   var para = document.createElement("button");
   para.className="contactInfoItem";
 
+  if(Me.myItemList.indexOf(item) > -1){
+    // if item is in borrowedList
+    if(Me.borrowedItemList.indexOf(item) > -1){
+      para.style.backgroundColor = "RED";
+    }
+  }
+
   para.id = "item_button_" + counter;
   //para.onclick = toggle(para.id);
   para.onclick = function() {
@@ -261,13 +268,26 @@ function submitItem() {
 }
 
 function itemButtonColorToggle(elem, id) {
+  //console.log("wtf");
+  var itemName = document.getElementById(id).innerHTML;
 
+  // mark to "borrowed"
   if (elem.style.backgroundColor == "rgb(234, 231, 220)" || elem.style.backgroundColor == "") {
     elem.style.backgroundColor = "red";
-  } else {
-    elem.style.backgroundColor = "rgb(234, 231, 220)";
-    //document.getElementById(id).classList.add("enabledItemButton");
+    // put item into borrowedItemList
+    if(Me.borrowedItemList.indexOf(itemName) < 0){
+      Me.borrowedItemList.push(itemName);
+    }
+  } 
+  // mark back to "unborrowed"
+  else {
+
+    elem.style.backgroundColor = "rgb(204, 201, 190)";
+    // remove item from borrowedItemList
+    Me.borrowedItemList.splice(Me.borrowedItemList.indexOf(itemName), 1)
   }
+
+  console.log(Me.borrowedItemList);
 }
 
 
@@ -339,11 +359,19 @@ function createItems(item, index, arr) {
   }
   para.id="itemElemId";
 
-  var myItem = false;
+  //var myItem = false;
   if(Me.myItemList.indexOf(item) > -1){
-    para.style.color = "ORANGE";
-    myItem = true;
-    item = item + " (my item)";
+    // if item is in borrowedList
+    if(Me.borrowedItemList.indexOf(item) > -1){
+      para.style.color = "RED";
+      item = item + " (Borrowed)";
+    }
+    // if item is not borrowed
+    else {
+      para.style.color = "ORANGE";
+      //myItem = true;
+      item = item + " (my item)";     
+    }
   }
 
   var node = document.createTextNode(item);
@@ -393,7 +421,7 @@ function joinToggle(checkbox) {
     }
     //toggle off
     else{
-      Me.myGroupList.splice(Me.myGroupList.indexOf(groupName), 1)
+      Me.myGroupList.splice(Me.myGroupList.indexOf(groupName), 1);
       //clear the memList
         for(var i = memList.length - 1; 0 <= i; i--){
           if(memList[i] && memList[i].parentElement)

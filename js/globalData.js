@@ -1,6 +1,6 @@
 
 class UserProfile {
-  constructor(firstName, lastName, picture, email, phoneNumber, facebook, myItemList, myGroupList, feedList) {
+  constructor(firstName, lastName, picture, email, phoneNumber, facebook, myItemList, myGroupList, feedList, borrowedItemList) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.picture = picture;
@@ -11,6 +11,7 @@ class UserProfile {
     this.myGroupList = myGroupList;
     this.feedList = feedList;
     this.fullName = firstName + " " + lastName;
+    this.borrowedItemList = borrowedItemList;
   }
 }
 
@@ -23,6 +24,7 @@ class Group{
 
 //each user materials
 var tempItemList = new Array ("Booze", "Soccer Ball", "Nuclear missle");
+var tempBorrowedItemList = new Array ();
 var tempGroupList = new Array ();
 var tempFeedList  = new Array (
   "Justin Gil checked out Wayne Rooney's glue stick",
@@ -40,11 +42,11 @@ var tempMemberList2 = new Array("Derrick Wong", "Scott Chen", "Michael Cheng", "
 var tempGroupItemList2 = new Array("Tape", "Post it", "iPhone X", "desktop", "Screw driver","Vacuum cleaner");
 
 //UserProfiles
-var Me = new UserProfile("Joe", "Schmoe", "pix/defaultProfile.jpg", "Rando@email.com", "(393)992-3142", "fb.com/fjnf", tempItemList, tempGroupList, tempFeedList);
-var Derrick = new UserProfile("Derrick", "Wong", "pix/defaultProfile.jpg", "Rando@email.com", "(393)992-3142", "fb.com/fjnf", tempItemList, tempGroupList, tempFeedList);
-var Jason = new UserProfile("Jason", "Jiajun", "pix/defaultProfile.jpg", "Rando@email.com", "(393)992-3142", "fb.com/fjnf", tempItemList, tempGroupList, tempFeedList);
-var Leo = new UserProfile("Leo", "Qiu", "pix/defaultProfile.jpg", "Rando@email.com", "(393)992-3142", "fb.com/fjnf", tempItemList, tempGroupList, tempFeedList);
-var Scott = new UserProfile("Scott", "Chen", "pix/defaultProfile.jpg", "Rando@email.com", "(393)992-3142", "fb.com/fjnf", tempItemList, tempGroupList, tempFeedList);
+var Me = new UserProfile("Joe", "Schmoe", "pix/defaultProfile.jpg", "Rando@email.com", "(393)992-3142", "fb.com/fjnf", tempItemList, tempGroupList, tempFeedList, tempBorrowedItemList);
+var Derrick = new UserProfile("Derrick", "Wong", "pix/defaultProfile.jpg", "Rando@email.com", "(393)992-3142", "fb.com/fjnf", tempItemList, tempGroupList, tempFeedList, tempBorrowedItemList);
+var Jason = new UserProfile("Jason", "Jiajun", "pix/defaultProfile.jpg", "Rando@email.com", "(393)992-3142", "fb.com/fjnf", tempItemList, tempGroupList, tempFeedList, tempBorrowedItemList);
+var Leo = new UserProfile("Leo", "Qiu", "pix/defaultProfile.jpg", "Rando@email.com", "(393)992-3142", "fb.com/fjnf", tempItemList, tempGroupList, tempFeedList, tempBorrowedItemList);
+var Scott = new UserProfile("Scott", "Chen", "pix/defaultProfile.jpg", "Rando@email.com", "(393)992-3142", "fb.com/fjnf", tempItemList, tempGroupList, tempFeedList, tempBorrowedItemList);
 
 //GroupProfile
 var VilEast1 = new Group (tempMemberList, tempGroupItemList);
@@ -80,5 +82,6 @@ var comments = [
   "Joe: me borrow tape",
   "Nico: Hai Hai"
 ];
+
 
 
