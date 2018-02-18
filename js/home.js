@@ -2,46 +2,6 @@
 /*
    ~~~~~~~~~~~~~~~~~~~~~~~~ Data ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
-var groupList = [
-  "Village East 1",
-  "Village West 3",
-  "Warren Reshall 4",
-  "UCSD Tennis Group",
-  "UCSD CSE Nerds",
-  "Anime Group"
-];
-
-var feedList = [
-  "Justin Gil checked out Wayne Rooney's glue stick",
-  "Leo Qiu checked out Bruno Mars's glue stick",
-  "Derrick Wong checked out Minooc Choo's glue stick",
-  "Scott Chen checked out Jason Hwang's glue stick",
-  "Michael Cheng checked out Issac's macbook charger",
-];
-
-var Me ={
-  myFirstName : "Joe",
-  myLastName : "Schmoe",
-  myPicture : "pix/defaultProfile.jpg",
-  myHome : "home.html",
-  myProfile : "myProfile.html",
-  myEmail : "Rando@email.com",
-  myPhone : "(no)sue-number",
-  myFB : "fb.com/lbj",
-  myItems : "soccer ball, tape, beer",
-  myGroups : "Village East 1, Village East 2"
-};
-
-var items = [
-  "soccer ball",
-  "tape",
-  "beer"
-]
-
-var groups = [
-  "Village East 1",
-  "Village East 2"
-]
 
 var Me ={
   myFirstName : "Joe",
@@ -53,14 +13,33 @@ var Me ={
   myPhone : "(no)sue-number",
   myFB : "fb.com/lbj",
   myItems : "soccer ball tape beer",
-  myGroups : "Village East 1, Village East 2",
-  fullName : "Joe Schmoe"
+  fullName : "Joe Schmoe",
+  myItemsList : new Array(
+    "Soccer ball",
+    "Tape",
+    "Beers"
+  ),
+  myGroupList : new Array(
+    "Village East 1",
+    "Village East 2"
+  )
 };
 
-var myItemsList = new Array(
-  "Soccer ball",
-  "Tape",
-  "Beers"
+var groupList = new Array(
+  "Village East 1",
+  "Village West 3",
+  "Warren Reshall 4",
+  "UCSD Tennis Group",
+  "UCSD CSE Nerds",
+  "Anime Group"
+);
+
+var feedList = new Array(
+  "Justin Gil checked out Wayne Rooney's glue stick",
+  "Leo Qiu checked out Bruno Mars's glue stick",
+  "Derrick Wong checked out Minooc Choo's glue stick",
+  "Scott Chen checked out Jason Hwang's glue stick",
+  "Michael Cheng checked out Issac's macbook charger",
 );
 
 var membersArray = new Array (
@@ -221,8 +200,8 @@ window.onclick = function(event) {
    ~~~~~~~~~~~~~~~~ Loads profile info for myProfile.html ~~~~~~~~~~~~~~~~
 */
 function startUpMyProfilePage() {
-  items.forEach(autoCreateItems);
-  groups.forEach(autoCreateGroups);
+  Me.myItemsList.forEach(autoCreateItems);
+  Me.myGroupList.forEach(autoCreateGroups);
   setOtherInfoMyProfilePage();
 
   var myImg = document.getElementById("profileImage");
@@ -373,7 +352,7 @@ function createItems(item, index, arr) {
   para.id="itemElemId";
 
   var myItem = false;
-  if(myItemsList.indexOf(item) > -1){
+  if(Me.myItemsList.indexOf(item) > -1){
     para.style.color = "ORANGE";
     myItem = true;
     item = item + " (my item)";
@@ -412,8 +391,8 @@ function joinToggle(checkbox) {
             itemFetchList[i].parentElement.removeChild(itemFetchList[i]);
         }
 
-        for(var i = 0; i < myItemsList.length; i++){
-          var myItemToAdd = myItemsList[i];
+        for(var i = 0; i < Me.myItemsList.length; i++){
+          var myItemToAdd = Me.myItemsList[i];
           itemListArray.push(myItemToAdd);
         }
         itemListArray.forEach(createItems);
@@ -438,8 +417,8 @@ function joinToggle(checkbox) {
             itemFetchList[i].parentElement.removeChild(itemFetchList[i]);
         }
         //remove my items from itemListArray
-        for(var i = 0; i < myItemsList.length; i++){
-          itemListArray.splice(itemListArray.indexOf(myItemsList[i]), 1);
+        for(var i = 0; i < Me.myItemsList.length; i++){
+          itemListArray.splice(itemListArray.indexOf(Me.myItemsList[i]), 1);
         }
         itemListArray.forEach(createItems);
     }
